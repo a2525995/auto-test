@@ -6,8 +6,6 @@ pipeline {
     }
   }
   stages {
-    stage('pull') {
-
         stage('operate') {
           steps {
             sh '''
@@ -16,7 +14,6 @@ pipeline {
                '''
           }
       }
-    }
   }
  //Send Email   
    post{
