@@ -42,6 +42,7 @@ pipeline {
      
   
   environment {
+    BUILD_USER_EMAIL = 'shouchen.jiang@cloudiwz.cn'
     TEST_REPO = '/usr/local/auto-test'
     EMAIL_REPO = '/usr/local/auto-test/template'
     NEWMAN_REPO = '/usr/local/auto-test/newman'
