@@ -11,11 +11,9 @@ pipeline {
             sh '''
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
+                  STAGE=${STAGE_STATUS}
                '''
-            script{
-              
-              STAGE_STATUS = "KOKO"
-            }
+           
           
           }
       }
@@ -23,7 +21,7 @@ pipeline {
           steps {
             sh '''
                   
-                  echo $STAGE_STATUS  
+                  echo $STAGE  
          
                '''
            
