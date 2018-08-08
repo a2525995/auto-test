@@ -21,11 +21,13 @@ pipeline {
     stage('ok') {
           steps {
             sh '''
-                  echo ${browser}
-                  echo $STAGE_STATUS
                   
+                  echo $STAGE_STATUS  
          
                '''
+            script{
+              echo "${browser}"
+            }
               }
       }
   }
