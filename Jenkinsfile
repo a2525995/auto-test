@@ -9,11 +9,12 @@ pipeline {
         stage('operate') {
           steps {
             sh '''
-                  cd $TEST_REPO
+                  cd $TEST_REP
                   newman -c Auto-Test.json -e workspace.json -H test.html
                '''
             script{
               def browser="koko"
+              echo "kokowwww"
             }
           
           }
