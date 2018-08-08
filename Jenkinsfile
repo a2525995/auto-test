@@ -7,8 +7,8 @@ pipeline {
   }
   stages {
         stage('operate') {
-          wrap([$class: 'BuildUser']) {
           steps {
+            wrap([$class: 'BuildUser']) {
             sh '''echo $STAGE_STATUS
                   STAGE_STATUS = "operate"
                   cd $TEST_REPO
@@ -19,8 +19,8 @@ pipeline {
           }
       }
     stage('ok') {
-      wrap([$class: 'BuildUser']) {
           steps {
+            wrap([$class: 'BuildUser']) {
             sh '''STAGE_STATUS = "ok"
                   echo $STAGE_STATUS
                   
