@@ -12,8 +12,7 @@ pipeline {
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
                   echo "operate" >> stage
-                  TEST_REPO=${TEST_REPO:2}
-                  echo $TEST_REPO
+                  
                '''
            
           
