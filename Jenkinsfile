@@ -9,23 +9,23 @@ pipeline {
         stage('operate') {
           steps {
             sh '''
-                  cd $TEST_REP
+                  cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
                '''
             script{
-              def browser="koko"
-              echo "kokowwww"
+              
+              echo "${STAGE_STATUS}"
             }
           
           }
       }
     stage('ok') {
           steps {
-            sh '''
+            sh （'''
                   
                   echo $STAGE_STATUS  
          
-               '''
+               '''）
             script{
               echo "${browser}"
             }
