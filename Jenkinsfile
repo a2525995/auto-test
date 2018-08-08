@@ -12,6 +12,7 @@ pipeline {
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
                   STAGE=${STAGE_STATUS}
+                  echo $STAGE
                '''
            
           
