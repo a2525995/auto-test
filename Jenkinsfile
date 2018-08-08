@@ -10,7 +10,7 @@ pipeline {
           steps {
             wrap([$class: 'BuildUser']) {
             sh '''echo $STAGE_STATUS
-                  STAGE_STATUS = "operate"
+                  STAGE_STATUS = 'operate'
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
                
@@ -21,7 +21,7 @@ pipeline {
     stage('ok') {
           steps {
             wrap([$class: 'BuildUser']) {
-            sh '''STAGE_STATUS = "ok"
+            sh '''STAGE_STATUS = 'ok'
                   echo $STAGE_STATUS
                   
                
