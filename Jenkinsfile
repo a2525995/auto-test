@@ -12,6 +12,7 @@ pipeline {
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
                '''
+            def value = 0
           }
       }
   }
