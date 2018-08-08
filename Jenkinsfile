@@ -14,7 +14,6 @@ pipeline {
                '''
             script{
               def browser="koko"
-              echo "${browser}"
             }
           
           }
@@ -22,6 +21,7 @@ pipeline {
     stage('ok') {
           steps {
             sh '''
+                  echo ${browser}
                   echo $STAGE_STATUS
                   
          
