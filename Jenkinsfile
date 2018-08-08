@@ -7,6 +7,7 @@ pipeline {
   }
   stages {
         stage('operate') {
+          wrap([$class: 'BuildUser']) {
           steps {
             sh '''echo $STAGE_STATUS
                   STAGE_STATUS = "operate"
@@ -15,8 +16,10 @@ pipeline {
                
                '''
           }
+          }
       }
     stage('ok') {
+      wrap([$class: 'BuildUser']) {
           steps {
             sh '''STAGE_STATUS = "ok"
                   echo $STAGE_STATUS
@@ -24,6 +27,7 @@ pipeline {
                
                '''
           }
+      }
       }
   }
  //Send Email   
