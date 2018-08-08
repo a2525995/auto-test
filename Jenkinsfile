@@ -11,8 +11,7 @@ pipeline {
             sh '''
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
-                  STAGE=${STAGE_STATUS}
-                  echo $STAGE
+                  echo "operate" >> stage
                '''
            
           
@@ -22,7 +21,7 @@ pipeline {
           steps {
             sh '''
                   
-                  echo $STAGE  
+                  echo "ok" >> $TEST_REPO/stage
          
                '''
            
