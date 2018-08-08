@@ -14,7 +14,7 @@ pipeline {
                '''
             script{
               
-              echo "${STAGE_STATUS}"
+              STAGE_STATUS = "KOKO"
             }
           
           }
