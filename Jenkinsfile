@@ -5,15 +5,24 @@ pipeline {
       label 'master'
     }
   }
-  def value = 0
   stages {
         stage('operate') {
           steps {
-            sh '''
+            sh '''echo $STAGE_STATUS
+                  $STAGE_STATUS = "operate"
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
+               
                '''
-            
+          }
+      }
+    stage('ok') {
+          steps {
+            sh '''$STAGE_STATUS = "ok"
+                  echo $STAGE_STATUS
+                  
+               
+               '''
           }
       }
   }
@@ -44,6 +53,7 @@ pipeline {
      
   
   environment {
+    STAGE_STATUS = 'default'
     BUILD_USER_EMAIL = 'shouchen.jiang@cloudiwz.cn'
     TEST_REPO = '/usr/local/auto-test'
     EMAIL_REPO = '/usr/local/auto-test/template'
