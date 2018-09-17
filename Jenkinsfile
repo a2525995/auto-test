@@ -8,6 +8,7 @@ pipeline {
   stages {
         stage('operate') {
           steps {
+            catchError {
             sh '''
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
@@ -15,7 +16,7 @@ pipeline {
                   
                '''
            
-          
+            }
           }
       }
     // some block
