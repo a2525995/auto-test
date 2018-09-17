@@ -20,8 +20,9 @@ pipeline {
       }
     // some block
     stage('ok') {
-      catchError {
+  
           steps {
+            catchError {
             sh '''
                   
                   echo "ok" >> $TEST_REPO/stage
