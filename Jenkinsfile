@@ -21,6 +21,7 @@ pipeline {
       }
     // some block
     stage('ok') {
+      steps{
       try{
             
             
@@ -34,7 +35,7 @@ pipeline {
       catch(error){}
       finally{}
   }
-  }
+    }}
  //Send Email   
    post{
      //SUCCESS
