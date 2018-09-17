@@ -21,17 +21,18 @@ pipeline {
       }
     // some block
     stage('ok') {
-  
+      try{
           steps {
-            catchError {
+            
+            
             sh '''
                   
                   echo "ok" >> $TEST_REPO/stage
                  currentBuild.result = 'SUCCESS'
                '''
            
-              }
-            
+              
+          }
       }
   }
   }
