@@ -18,9 +18,9 @@ pipeline {
           
           }
       }
-    catchError {
     // some block
     stage('ok') {
+      catchError {
           steps {
             sh '''
                   
