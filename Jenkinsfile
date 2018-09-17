@@ -18,16 +18,19 @@ pipeline {
           
           }
       }
+    catchError {
+    // some block
     stage('ok') {
           steps {
             sh '''
                   
                   echo "ok" >> $TEST_REPO/stage
-         
+                  123
                '''
            
               }
       }
+  }
   }
  //Send Email   
    post{
