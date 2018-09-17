@@ -22,7 +22,6 @@ pipeline {
     // some block
     stage('ok') {
       try{
-          steps {
             
             
             sh '''
@@ -30,10 +29,10 @@ pipeline {
                   echo "ok" >> $TEST_REPO/stage
                  currentBuild.result = 'SUCCESS'
                '''
-           
               
-          }
       }
+      catch(error){}
+      finally{}
   }
   }
  //Send Email   
