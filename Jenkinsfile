@@ -10,18 +10,16 @@ pipeline {
         stage('operate') {
           steps {
             script{
-              try{
+      
             sh '''
                   cd $TEST_REPO
                   cd 'sdfs
                   echo "operate" >> stage
                   
                '''
-              }
+            
             }
-            catch(e){
-              sh 'exit 0'
-            }
+           
           }
       }
     // some block
