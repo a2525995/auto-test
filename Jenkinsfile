@@ -26,12 +26,13 @@ pipeline {
             sh '''
                   
                   echo "ok" >> $TEST_REPO/stage
-                 currentBuild.result = \'SUCCESS\'
+                
                '''    
         }
       }
   }
     }
+   currentBuild.result = 'SUCCESS'
  //Send Email   
    post{
      //SUCCESS
