@@ -35,7 +35,6 @@ pipeline {
                 
                '''    
         }
-         currentBuild.result = 'SUCCESS'
       }
   }
     }
