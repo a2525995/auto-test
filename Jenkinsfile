@@ -1,4 +1,3 @@
-
 pipeline {
   agent {
     node {
@@ -8,40 +7,34 @@ pipeline {
   stages {
         stage('operate') {
           steps {
-            post{success{
-            script{
-      
+            script {
+              try{
             sh '''
                   cd $TEST_REPO
-                  cd 'sdfs
+                  newman -c Auto-Test.json -e workspace.json -H test.html
                   echo "operate" >> stage
                   
                '''
-            
-            }}
-              failure{
-              sh '''echo "send ok"
-              '''
-              }
-              
            
+              }
+             catch(Exception e){
+           echo 'nothing'
+       }
           }
       }
-        }
     // some block
     stage('ok') {
       steps{
-        
+            
+            
             sh '''
                   
-                  echo "ok" >> $TEST_REPO/stage
-                
+                  
+                 currentBuild.result = 'SUCCESS'
                '''    
-        
       }
   }
     }
-
  //Send Email   
    post{
      //SUCCESS
@@ -66,7 +59,7 @@ pipeline {
             }
         }
 }
-
+     
   
   environment {
     STAGE_STATUS = 'default'
@@ -77,3 +70,5 @@ pipeline {
     
   }
 }
+
+
