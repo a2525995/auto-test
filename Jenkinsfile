@@ -33,7 +33,7 @@ pipeline {
   }
     }
  //Send Email   
-  catchError{
+  catchError(){
    post{
      //SUCCESS
         success{
