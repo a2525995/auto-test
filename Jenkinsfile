@@ -8,14 +8,15 @@ pipeline {
   stages {
         stage('operate') {
           steps {
-            catchError {
+            script{
+              try{
             sh '''
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
                   echo "operate" >> stage
                   
                '''
-           
+              }
             }
           }
       }
@@ -29,10 +30,11 @@ pipeline {
                 
                '''    
         }
+         currentBuild.result = \'SUCCESS\'
       }
   }
     }
-   currentBuild.result = 'SUCCESS'
+
  //Send Email   
    post{
      //SUCCESS
