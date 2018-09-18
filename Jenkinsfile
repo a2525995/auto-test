@@ -8,7 +8,7 @@ pipeline {
   stages {
         stage('operate') {
           steps {
-            post{
+            post{success{
             script{
       
             sh '''
@@ -18,7 +18,7 @@ pipeline {
                   
                '''
             
-            }
+            }}
               failure{
               sh '''echo "send ok"
               '''
