@@ -8,7 +8,8 @@ pipeline {
   stages {
         stage('operate') {
           steps {
-            catchError {
+            script {
+              try{
             sh '''
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
@@ -16,7 +17,10 @@ pipeline {
                   
                '''
            
-            }
+              }
+             catch(Exception e){
+           echo 'nothing'
+       }
           }
       }
     // some block
