@@ -31,7 +31,7 @@ pipeline {
             sh '''
                   
                   
-                 currentBuild.result = 'SUCCESS'
+                 echo "kk"
                '''    
       }
   }
