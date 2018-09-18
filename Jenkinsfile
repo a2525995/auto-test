@@ -3,20 +3,24 @@ pipeline {
   agent {
     node {
       label 'master'
+      def build_ok = true
     }
   }
   stages {
         stage('operate') {
           steps {
             script{
-              catchError(){
+              try{
             sh '''
                   cd $TEST_REPO
                   cd 'sdfs
                   echo "operate" >> stage
-                  exit 0
+                  
                '''
               }
+            }
+            catch(e){
+              sh 'exit 0'
             }
           }
       }
