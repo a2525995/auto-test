@@ -20,7 +20,8 @@ pipeline {
             
             }
               failure{
-              echo ‘send ok’
+              sh '''echo "send ok"
+              '''
               }
               
            
