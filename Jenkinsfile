@@ -30,7 +30,7 @@ pipeline {
                 
                '''    
         }
-         currentBuild.result = \'SUCCESS\'
+         currentBuild.result = 'SUCCESS'
       }
   }
     }
