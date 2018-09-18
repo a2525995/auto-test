@@ -3,12 +3,12 @@ pipeline {
   agent {
     node {
       label 'master'
-      def build_ok = true
     }
   }
   stages {
         stage('operate') {
           steps {
+            post{
             script{
       
             sh '''
@@ -19,9 +19,14 @@ pipeline {
                '''
             
             }
+              failure{
+              echo ‘send ok’
+              }
+              
            
           }
       }
+        }
     // some block
     stage('ok') {
       steps{
