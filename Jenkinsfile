@@ -6,11 +6,10 @@ pipeline {
     }
   }
   stages {
-     try{
         stage('operate') {
           steps {
             script{
-             
+              catchError(){
             sh '''
                   cd $TEST_REPO
                   cd 'sdfs
@@ -21,11 +20,6 @@ pipeline {
             }
           }
       }
-    catch(Exception e){
-                
-                    currentBuild.result = 'SUCCESS'
-              
-              }
     // some block
     stage('ok') {
       steps{
