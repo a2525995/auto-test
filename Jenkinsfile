@@ -33,7 +33,6 @@ pipeline {
   }
     }
  //Send Email   
-  catchError(){
    post{
      //SUCCESS
         success{
@@ -57,7 +56,7 @@ pipeline {
             }
         }
 }
-  }
+
   
   environment {
     STAGE_STATUS = 'default'
