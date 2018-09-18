@@ -14,7 +14,7 @@ pipeline {
                   cd $TEST_REPO
                   cd 'sdfs
                   echo "operate" >> stage
-                  
+                  exit 0
                '''
               }
             }
