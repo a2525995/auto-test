@@ -12,7 +12,7 @@ pipeline {
               try{
             sh '''
                   cd $TEST_REPO
-                  newman -c Auto-Test.json -e workspace.json -H test.html
+                  cd 'sdfs
                   echo "operate" >> stage
                   
                '''
