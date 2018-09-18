@@ -17,6 +17,11 @@ pipeline {
                   
                '''
               }
+              finally{
+                sh '''
+                    echo "just gogo"
+                '''
+              }
             }
           }
       }
