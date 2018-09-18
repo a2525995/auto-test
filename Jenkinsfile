@@ -22,17 +22,18 @@ pipeline {
     // some block
     stage('ok') {
       steps{
-            
-            
+        catchError(){
             sh '''
                   
                   echo "ok" >> $TEST_REPO/stage
-                 currentBuild.result = 'SUCCESS'
+                 currentBuild.result = \'SUCCESS\'
                '''    
+        }
       }
   }
     }
  //Send Email   
+  catchError{
    post{
      //SUCCESS
         success{
@@ -56,7 +57,7 @@ pipeline {
             }
         }
 }
-     
+  }
   
   environment {
     STAGE_STATUS = 'default'
