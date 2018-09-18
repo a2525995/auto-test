@@ -17,9 +17,9 @@ pipeline {
                   
                '''
               }
-              finally{
+              catch(Exception e){
                 sh '''
-                    echo "just gogo"
+                    currentBuild.result = 'SUCCESS'
                 '''
               }
             }
