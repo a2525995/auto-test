@@ -13,6 +13,7 @@ pipeline {
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
                   echo "operate" >> stage
+                  echo "kk"
                   
                '''
            
