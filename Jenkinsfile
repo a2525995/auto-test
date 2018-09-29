@@ -18,7 +18,7 @@ pipeline {
            
               }
              catch(Exception e){
-           echo 'nothing'
+           echo 'nothin2222g'
        }
           }
       }
