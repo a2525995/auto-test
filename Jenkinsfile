@@ -29,7 +29,7 @@ pipeline {
             
             
             sh '''
-                  
+                  dsfjsdf
                   
                  echo "kk1332232399723132198"
                '''    
