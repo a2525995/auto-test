@@ -18,7 +18,7 @@ pipeline {
            
               }
              catch(Exception e){
-
+              echo "ssss"
        }
           }
       }
