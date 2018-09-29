@@ -20,7 +20,7 @@ pipeline {
            
               }
              catch(Exception e){
-           echo 'nothing123'
+           echo 'nothing123444'
        }
           }
       }
