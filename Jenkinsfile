@@ -18,7 +18,7 @@ pipeline {
            
               }
              catch(Exception e){
-              echo "ss89812211111671232323134567111118uss"
+              echo "13"
        }
           }
       }
