@@ -1,4 +1,3 @@
-
 pipeline {
   agent {
     node {
@@ -24,6 +23,7 @@ pipeline {
        }
           }
       }
+        }
     // some block
     stage('ok') {
       steps{
@@ -32,36 +32,12 @@ pipeline {
             sh '''
                   
                   
-                 currentBuild.result = 'SUCCESS'
+                 echo "kk"
                '''    
       }
   }
     }
- //Send Email   
-   post{
-     //SUCCESS
-        success{
-            script { 
-                wrap([$class: 'BuildUser']) {
-                  sh ''' cd ${EMAIL_REPO}
-                         ./send_email.sh ${BUILD_USER_EMAIL} SUCCESS ${JOB_NAME} ${BUILD_NUMBER} ${BUILD_URL} ${NEWMAN_REPO}
-                     '''
-                }
-            }
-        }
-     
-//FAILURE
-        failure{
-            script { 
-                wrap([$class: 'BuildUser']) {
-                sh ''' cd ${EMAIL_REPO}
-                         ./send_email.sh ${BUILD_USER_EMAIL} FAILURE ${JOB_NAME} ${BUILD_NUMBER} ${BUILD_URL} ${NEWMAN_REPO}
-                     '''
-                }
-            }
-        }
-}
-     
+
   
   environment {
     STAGE_STATUS = 'default'
@@ -72,3 +48,5 @@ pipeline {
     
   }
 }
+
+
