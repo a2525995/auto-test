@@ -12,7 +12,7 @@ pipeline {
             sh '''
                   cd $TEST_REPO
                   newman -c Auto-Test.json -e workspace.json -H test.html
-                  echo "opera1333311te" >> stage
+                  echo "opera1333311te1111" >> stage
                   
                '''
            
