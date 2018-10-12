@@ -6,7 +6,7 @@ pipeline {
   }
   stages {
         stage('operate') {
-          steps {
+          steps {1111
             script {
               try{
             sh '''
