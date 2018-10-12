@@ -6,7 +6,7 @@ pipeline {
   }
   stages {
         stage('operate') {
-          steps {222
+          steps {
             script {
               try{
             sh '''
@@ -29,8 +29,8 @@ pipeline {
       steps{
             
             
-            sh '''
-                  
+            sh '''exit 1
+                  exit 0
                  echo "kk133223239972311231231232198"
                '''    
       }
