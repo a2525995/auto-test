@@ -11,6 +11,7 @@ pipeline {
               try{
             sh '''
                   cd $TEST_REPO
+                  dsfsdfsdfsfd
                   newman -c Auto-Test.json -e workspace.json -H test.html
                   echo "opera1333311te11114" >> stage
                   
