@@ -11,6 +11,7 @@ pipeline {
               try{
             sh '''
                   cd $TEST_REPO
+                  dsfsdfsdfsfd
                   newman -c Auto-Test.json -e workspace.json -H test.html
                   echo "opera1333311te11114" >> stage
                   
@@ -28,8 +29,8 @@ pipeline {
       steps{
             
             
-            sh '''
-                  
+            sh '''exit 1
+                  exit 0
                  echo "kk133223239972311231231232198"
                '''    
       }
