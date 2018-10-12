@@ -19,7 +19,7 @@ pipeline {
            
               }
              catch(Exception e){
-               echo "2222"
+               echo "2222333"
               echo "1231233"
        }
           }
