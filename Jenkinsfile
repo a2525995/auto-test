@@ -15,6 +15,7 @@ pipeline {
                   echo "opera1333311te11114" >> stage
                   echo "test"
                   echo "3335555"
+                  echo "23"
                '''
            
               }
