@@ -15,6 +15,7 @@ pipeline {
                   echo "opera1333311te22211114111" >> stage
                   echo "testttt"
                   echo 29995
+                  echo 9999
                '''
            
               }
