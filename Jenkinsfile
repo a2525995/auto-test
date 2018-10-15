@@ -14,7 +14,8 @@ pipeline {
                   newman -c Auto-Test.json -e workspace.json -H test.html
                   echo "opera1333311te22211114111" >> stage
                   echo "test"
-                  
+                  echo "3335555"
+                  echo "23"
                '''
            
               }
