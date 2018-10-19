@@ -16,7 +16,7 @@ pipeline {
                   echo "testttt"
                   echo 29995
                   
-                  echo 29995
+                  echo 2999577
                '''
            
               }
